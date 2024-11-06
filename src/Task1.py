@@ -18,11 +18,19 @@ class Helicopter:
     def max_speed(self):
         return self.__max_speed
 
+    @property
+    def year(self):
+        return self.__year
+
+    @property
+    def model(self):
+        return self.__model
+
     def __str__(self):
-        return f"Passenger capacity = {self.__passenger_capacity}; Name = {self.__name}; Max speed = {self.__max_speed}"
+        return f"Passenger capacity = {self.__passenger_capacity}; Name = {self.__name}; Max speed = {self.__max_speed}; Year = {self.__year}; Model = {self.__model}"
 
     def __repr__(self):
-        return f"Helicopter ({self.__passenger_capacity}; {self.__name}; {self.__max_speed})"
+        return f"Helicopter ({self.__passenger_capacity}; {self.__name}; {self.__max_speed}; {self.__year}; {self.__model})"
 
     def __del__(self):
         print(f"Helicopter {self.__name} destroyed")
