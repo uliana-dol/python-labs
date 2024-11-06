@@ -1,19 +1,21 @@
 class Helicopter:
-    public_year = 2060
-    public_model = "Default Model"
-
-    def __init__(self, passenger_capacity=0, name="Unknown", max_speed=0):
+    def __init__(self, passenger_capacity=0, name="Unknown", max_speed=0, year=0, model=""):
         self.__passenger_capacity = passenger_capacity
         self.__name = name
         self.__max_speed = max_speed
+        self.__year = year
+        self.__model = model
 
-    def get_passenger_capacity(self):
+    @property
+    def passenger_capacity(self):
         return self.__passenger_capacity
 
-    def get_name(self):
+    @property
+    def name(self):
         return self.__name
 
-    def get_max_speed(self):
+    @property
+    def max_speed(self):
         return self.__max_speed
 
     def __str__(self):
@@ -26,15 +28,14 @@ class Helicopter:
         print(f"Helicopter {self.__name} destroyed")
 
 def main():
-    hel1 = Helicopter(20, "NB", 3000)
-    hel2 = Helicopter(15, "RM", 2000)
-    hel3 = Helicopter(10, "V", 1500)
+    hel1 = Helicopter(20, "NB", 3000, 2060, "Default Model")
+    hel2 = Helicopter(15, "RM", 2000, 2070, "Default Model")
+    hel3 = Helicopter(10, "V", 1500, 2034, "Default Model")
 
     print(hel1)
     print(hel2)
     print(hel3)
 
-    print(f"Public Fields: year - {Helicopter.public_year}, model - {Helicopter.public_model}")
 
 if __name__ == "__main__":
     main()
